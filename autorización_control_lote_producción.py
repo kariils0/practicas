@@ -15,8 +15,8 @@ mantenimiento_pendiente: bool
 temperatura_horno = 190
 presión_línea_óptima = True
 materia_prima_disponible = True
-orden_reabastecimiento_activa = True
-operarios_capacitados = 3 
+orden_reabastecimiento_activa = False
+operarios_capacitados = 3
 es_turno_nocturno = False
 calidad_aprobada = True
 mantenimiento_pendiente = False
@@ -27,5 +27,12 @@ requerimientos_insumos = materia_prima_disponible or orden_reabastecimiento_acti
 lote_autorizado = requerimientos_técnicos and requerimientos_insumos
 
 if lote_autorizado:
-    operarios_capacitados and es_turno_nocturno
-    print("Línea 1")
+    if (operarios_capacitados >= 3) and not es_turno_nocturno:
+        print("Línea 1 (Alta Velocidad)")
+    else:
+        print("Línea 2(Estándar/Supervisada)")
+else:
+    if not calidad_aprobada or mantenimiento_pendiente:
+        print("Paro Técnico Obligatorio")
+    else: 
+        print("Detenido en Espera de Materia Prima")

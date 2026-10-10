@@ -4,7 +4,7 @@ pago_extra: float = 6.00
 pago_total: float
 pares_extra: int
 pares_faltantes: int 
-pares_armados: int = 10
+pares_armados: int =  10
 
 if pares_armados == meta_zapatos:
     pago_total = pares_armados * pago_normal

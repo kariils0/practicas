@@ -1,15 +1,30 @@
-bolsa_plátanos: int = 600
-promo_proveedor: int
-cantidad_bolsas_comprar: int
-personal_seguridad_cerca: bool
-compra_por_cliente: int
-una_bolsa: int = 1100
-dos_bolsas: int = 1700
-tres_bolsas: int = 2400
-inventario_suficiente: bool
+
+costo_bolsa: int = 600
+bolsas_adicionales: float = 0
+bolsas_compradas: int = 0
+piso: int = 2
+aula: int = 10
+aparece_seguridad: bool
+compra_por_cliente: int = 0
+precio_venta: int 
+inventario: int = 0
 hay_clientes_interesados: bool
-maría_es_descubierta: bool
-ingresos_totales: float
-bolsas_vendidas: int
-bolsas_restantes: int
-utilidad_final: float
+costo_total: float = 0
+ingreso: float = 0
+bolsas_vendidas: int = 0
+bolsas_restantes: int = 0
+utilidad_final: float = 0
+
+bolsas_compradas = int(input(f"¿Cuántas bolsas compra María?"))
+bolsas_adicionales = (bolsas_compradas // 12) * 3
+inventario = bolsas_compradas + bolsas_adicionales
+costo_total = bolsas_compradas * costo_bolsa
+
+
+
+utilidad_final = ingreso - costo_total
+print("REPORTE FINAL")
+print("Ingreso total: ", ingreso)
+print("Bolsas vendidas: ", bolsas_vendidas)
+print("Bolsas restantes: ", bolsas_restantes)
+print("Utilidad final: ", utilidad_final)
